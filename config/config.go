@@ -9,7 +9,6 @@ import (
 type Config struct {
 	DB             DbConfig               `toml:"db"`
 	JWT            JWTConfig              `toml:"jwt"`
-	Log            LogConfig              `toml:"log"`
 	API            APIConfig              `toml:"api"`
 	Node           NodeConfig             `toml:"node"`
 	MessageService MessageServiceConfig   `toml:"messageService"`
@@ -24,11 +23,6 @@ type Config struct {
 type NodeConfig struct {
 	Url   string `toml:"url"`
 	Token string `toml:"token"`
-}
-
-type LogConfig struct {
-	Path  string `toml:"path"`
-	Level string `toml:"level"`
 }
 
 type APIConfig struct {
@@ -140,10 +134,6 @@ func DefaultConfig() *Config {
 		},
 		JWT: JWTConfig{
 			AuthURL: "http://127.0.0.1:8989",
-		},
-		Log: LogConfig{
-			Path:  "",
-			Level: "info",
 		},
 		API: APIConfig{
 			Address: "/ip4/127.0.0.1/tcp/39812",

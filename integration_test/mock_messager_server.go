@@ -99,7 +99,7 @@ func mockMessagerServer(ctx context.Context, repoPath string, cfg *config.Config
 
 	provider := fx.Options(
 		// prover
-		fx.Supply(cfg, &cfg.DB, &cfg.API, &cfg.JWT, &cfg.Node, &cfg.Log, &cfg.MessageService, cfg.Libp2pNet,
+		fx.Supply(cfg, &cfg.DB, &cfg.API, &cfg.JWT, &cfg.Node, &cfg.MessageService, cfg.Libp2pNet,
 			&cfg.Gateway, &cfg.RateLimit, cfg.Trace, cfg.Metrics, cfg.Publisher),
 		fx.Supply(fullNode),
 		fx.Supply(networkParams.NetworkName),
